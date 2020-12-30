@@ -7,6 +7,7 @@ $bg = New-object System.windows.forms.form
 
 # On set les propriétés du BackGround
 $bg.AutoSize = $true #L'autosize
+# $bg.Icon = "C:\Users\Famille\Desktop\Dev\Powershell\PingShell\PingShell\bin\img\ico.ico" ICone Mais sa marche pas
 $bg.Width = 1200 #La largeur
 $bg.Height = 600 #La longeur
 $bg.StartPosition = "Centerscreen" # La position de démarrage de la fênetre
@@ -25,14 +26,20 @@ $lfst.AutoSize = $true # On le met en autosize
 $lfst.Text = "Pour commencer le teste de ping clicker ici ----->"
 $lfst.Location = New-Object System.Drawing.Point(50, 200)
 
+# On crée le textbox pour ping
+$tbp = New-Object System.windows.forms.textbox 
+$tbp.AutoSize = $true 
+$tbp.Size = New-Object System.Drawing.Size(75, 25)
+$tbp.Location = New-Object System.Drawing.Point(300, 200)
+
 # On crée le startButton
 $startbutton = New-Object System.windows.forms.button 
 $startbutton.AutoSize = $true 
 $startbutton.Size = New-Object System.Drawing.Size(10, 20)
-$startbutton.Location = New-Object System.Drawing.Point(300, 195)
+$startbutton.Location = New-Object System.Drawing.Point(400, 195)
 $startbutton.Text = "Lancer PingShell"
 $startbutton.add_click( {
-        & $PSScriptRoot\script\start.ps1
+        & $PSScriptRoot\main.ps1
     }) # On lance le script au click
 
 # On crée le Update Label
@@ -58,5 +65,6 @@ $bg.Controls.Add($exp)
 $bg.Controls.add($updatelabel)
 $bg.Controls.add($updatebutton)
 $bg.Controls.add($lfst)
+$bg.Controls.add($tbp)
 
 $bg.ShowDialog()    # On show le background
