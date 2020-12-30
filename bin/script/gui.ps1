@@ -2,6 +2,7 @@
 Add-type -assembly System.windows.forms
 Add-type -assembly System.drawing
 
+
 # On crée le background 
 $bg = New-object System.windows.forms.form
 
