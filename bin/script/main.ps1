@@ -8,12 +8,15 @@ $bg = New-object System.windows.forms.form
 
 # On set les propriétés du BackGround
 $bg.AutoSize = $true #L'autosize
-# $bg.Icon = "C:\Users\Famille\Desktop\Dev\Powershell\PingShell\PingShell\bin\img\ico.ico" ICone Mais sa marche pas
 $bg.Width = 1200 #La largeur
 $bg.Height = 600 #La longeur
 $bg.StartPosition = "Centerscreen" # La position de démarrage de la fênetre
 $bg.Text = "PingShell" # Le titre de la fenêtre
 # C'est tout pour le BackGround, il est temps de passer au Texte
+
+#
+
+#
 
 #Texte de bienvenue
 $exp = New-Object System.Windows.Forms.Label # On crée le Label (texte)
